@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TCP_Klienti
 {
-    public partial class Form2 : Form
+    public partial class Register : Form
     {
-        public Form2()
+        public Register()
         {
             InitializeComponent();
         }
@@ -58,6 +58,11 @@ namespace TCP_Klienti
         }
 
         private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
         {
 
         }

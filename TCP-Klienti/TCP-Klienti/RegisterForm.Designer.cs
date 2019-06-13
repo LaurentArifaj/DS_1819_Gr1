@@ -1,6 +1,6 @@
 ﻿namespace TCP_Klienti
 {
-    partial class Form2
+    partial class Register
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,19 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textHours = new System.Windows.Forms.TextBox();
+            this.lblHours = new System.Windows.Forms.Label();
+            this.lblSubject = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.cmbTitle = new System.Windows.Forms.ComboBox();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.textNumber = new System.Windows.Forms.TextBox();
+            this.lblPhoneNumber = new System.Windows.Forms.Label();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.bttnRegister = new System.Windows.Forms.Button();
+            this.bttnLogin = new System.Windows.Forms.Button();
             this.textEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -39,19 +52,6 @@
             this.lblMbiemri = new System.Windows.Forms.Label();
             this.txtEmri = new System.Windows.Forms.TextBox();
             this.lblEmri = new System.Windows.Forms.Label();
-            this.logInBtn = new System.Windows.Forms.Button();
-            this.register = new System.Windows.Forms.Button();
-            this.cmbGender = new System.Windows.Forms.ComboBox();
-            this.textNumber = new System.Windows.Forms.TextBox();
-            this.lblPhoneNumber = new System.Windows.Forms.Label();
-            this.lblGender = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textHours = new System.Windows.Forms.TextBox();
-            this.lblHours = new System.Windows.Forms.Label();
-            this.lblSubject = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.cmbTitle = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -83,8 +83,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.textNumber);
             this.splitContainer1.Panel2.Controls.Add(this.lblPhoneNumber);
             this.splitContainer1.Panel2.Controls.Add(this.cmbGender);
-            this.splitContainer1.Panel2.Controls.Add(this.register);
-            this.splitContainer1.Panel2.Controls.Add(this.logInBtn);
+            this.splitContainer1.Panel2.Controls.Add(this.bttnRegister);
+            this.splitContainer1.Panel2.Controls.Add(this.bttnLogin);
             this.splitContainer1.Panel2.Controls.Add(this.textEmail);
             this.splitContainer1.Panel2.Controls.Add(this.lblEmail);
             this.splitContainer1.Panel2.Controls.Add(this.textBox2);
@@ -99,147 +99,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(584, 561);
             this.splitContainer1.SplitterDistance = 43;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // textEmail
-            // 
-            this.textEmail.Location = new System.Drawing.Point(85, 123);
-            this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(385, 22);
-            this.textEmail.TabIndex = 19;
-            this.textEmail.TextChanged += new System.EventHandler(this.textEmail_TextChanged);
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(93, 104);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(42, 16);
-            this.lblEmail.TabIndex = 18;
-            this.lblEmail.Text = "Email";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(337, 181);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(133, 22);
-            this.textBox2.TabIndex = 17;
-            // 
-            // lblCPass
-            // 
-            this.lblCPass.AutoSize = true;
-            this.lblCPass.Location = new System.Drawing.Point(344, 165);
-            this.lblCPass.Name = "lblCPass";
-            this.lblCPass.Size = new System.Drawing.Size(116, 16);
-            this.lblCPass.TabIndex = 16;
-            this.lblCPass.Text = "Confirm Password";
-            // 
-            // textPassword
-            // 
-            this.textPassword.Location = new System.Drawing.Point(85, 181);
-            this.textPassword.Name = "textPassword";
-            this.textPassword.Size = new System.Drawing.Size(133, 22);
-            this.textPassword.TabIndex = 15;
-            // 
-            // lblPass
-            // 
-            this.lblPass.AutoSize = true;
-            this.lblPass.Location = new System.Drawing.Point(93, 165);
-            this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(68, 16);
-            this.lblPass.TabIndex = 14;
-            this.lblPass.Text = "Password";
-            // 
-            // textMbiemri
-            // 
-            this.textMbiemri.Location = new System.Drawing.Point(361, 63);
-            this.textMbiemri.Name = "textMbiemri";
-            this.textMbiemri.Size = new System.Drawing.Size(109, 22);
-            this.textMbiemri.TabIndex = 13;
-            // 
-            // lblMbiemri
-            // 
-            this.lblMbiemri.AutoSize = true;
-            this.lblMbiemri.Location = new System.Drawing.Point(370, 44);
-            this.lblMbiemri.Name = "lblMbiemri";
-            this.lblMbiemri.Size = new System.Drawing.Size(56, 16);
-            this.lblMbiemri.TabIndex = 12;
-            this.lblMbiemri.Text = "Mbiemri";
-            // 
-            // txtEmri
-            // 
-            this.txtEmri.Location = new System.Drawing.Point(227, 63);
-            this.txtEmri.Multiline = true;
-            this.txtEmri.Name = "txtEmri";
-            this.txtEmri.Size = new System.Drawing.Size(105, 20);
-            this.txtEmri.TabIndex = 11;
-            // 
-            // lblEmri
-            // 
-            this.lblEmri.AutoSize = true;
-            this.lblEmri.Location = new System.Drawing.Point(234, 44);
-            this.lblEmri.Name = "lblEmri";
-            this.lblEmri.Size = new System.Drawing.Size(35, 16);
-            this.lblEmri.TabIndex = 10;
-            this.lblEmri.Text = "Emri";
-            this.lblEmri.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // logInBtn
-            // 
-            this.logInBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.logInBtn.Location = new System.Drawing.Point(85, 354);
-            this.logInBtn.Name = "logInBtn";
-            this.logInBtn.Size = new System.Drawing.Size(101, 29);
-            this.logInBtn.TabIndex = 28;
-            this.logInBtn.Text = "Log In";
-            this.logInBtn.UseVisualStyleBackColor = false;
-            // 
-            // register
-            // 
-            this.register.BackColor = System.Drawing.SystemColors.Control;
-            this.register.Location = new System.Drawing.Point(338, 354);
-            this.register.Name = "register";
-            this.register.Size = new System.Drawing.Size(101, 29);
-            this.register.TabIndex = 29;
-            this.register.Text = "Register";
-            this.register.UseVisualStyleBackColor = false;
-            this.register.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // cmbGender
-            // 
-            this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Items.AddRange(new object[] {
-            "M",
-            "F"});
-            this.cmbGender.Location = new System.Drawing.Point(337, 250);
-            this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(133, 24);
-            this.cmbGender.TabIndex = 32;
-            this.cmbGender.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // textNumber
-            // 
-            this.textNumber.Location = new System.Drawing.Point(85, 250);
-            this.textNumber.Name = "textNumber";
-            this.textNumber.Size = new System.Drawing.Size(133, 22);
-            this.textNumber.TabIndex = 34;
-            // 
-            // lblPhoneNumber
-            // 
-            this.lblPhoneNumber.AutoSize = true;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(93, 234);
-            this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(98, 16);
-            this.lblPhoneNumber.TabIndex = 33;
-            this.lblPhoneNumber.Text = "Phone Number";
-            // 
-            // lblGender
-            // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(347, 231);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(53, 16);
-            this.lblGender.TabIndex = 36;
-            this.lblGender.Text = "Gender";
             // 
             // label11
             // 
@@ -307,17 +166,159 @@
             "BSc"});
             this.cmbTitle.Location = new System.Drawing.Point(85, 61);
             this.cmbTitle.Name = "cmbTitle";
-            this.cmbTitle.Size = new System.Drawing.Size(133, 24);
+            this.cmbTitle.Size = new System.Drawing.Size(50, 24);
             this.cmbTitle.TabIndex = 42;
             // 
-            // Form2
+            // lblGender
+            // 
+            this.lblGender.AutoSize = true;
+            this.lblGender.Location = new System.Drawing.Point(347, 231);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(53, 16);
+            this.lblGender.TabIndex = 36;
+            this.lblGender.Text = "Gender";
+            // 
+            // textNumber
+            // 
+            this.textNumber.Location = new System.Drawing.Point(85, 250);
+            this.textNumber.Name = "textNumber";
+            this.textNumber.Size = new System.Drawing.Size(133, 22);
+            this.textNumber.TabIndex = 34;
+            // 
+            // lblPhoneNumber
+            // 
+            this.lblPhoneNumber.AutoSize = true;
+            this.lblPhoneNumber.Location = new System.Drawing.Point(93, 234);
+            this.lblPhoneNumber.Name = "lblPhoneNumber";
+            this.lblPhoneNumber.Size = new System.Drawing.Size(98, 16);
+            this.lblPhoneNumber.TabIndex = 33;
+            this.lblPhoneNumber.Text = "Phone Number";
+            // 
+            // cmbGender
+            // 
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Items.AddRange(new object[] {
+            "M",
+            "F"});
+            this.cmbGender.Location = new System.Drawing.Point(337, 250);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(133, 24);
+            this.cmbGender.TabIndex = 32;
+            this.cmbGender.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // bttnRegister
+            // 
+            this.bttnRegister.BackColor = System.Drawing.SystemColors.Control;
+            this.bttnRegister.Location = new System.Drawing.Point(338, 354);
+            this.bttnRegister.Name = "bttnRegister";
+            this.bttnRegister.Size = new System.Drawing.Size(101, 29);
+            this.bttnRegister.TabIndex = 29;
+            this.bttnRegister.Text = "Register";
+            this.bttnRegister.UseVisualStyleBackColor = false;
+            this.bttnRegister.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // bttnLogin
+            // 
+            this.bttnLogin.BackColor = System.Drawing.SystemColors.Control;
+            this.bttnLogin.Location = new System.Drawing.Point(85, 354);
+            this.bttnLogin.Name = "bttnLogin";
+            this.bttnLogin.Size = new System.Drawing.Size(101, 29);
+            this.bttnLogin.TabIndex = 28;
+            this.bttnLogin.Text = "Log In";
+            this.bttnLogin.UseVisualStyleBackColor = false;
+            // 
+            // textEmail
+            // 
+            this.textEmail.Location = new System.Drawing.Point(85, 123);
+            this.textEmail.Name = "textEmail";
+            this.textEmail.Size = new System.Drawing.Size(385, 22);
+            this.textEmail.TabIndex = 19;
+            this.textEmail.TextChanged += new System.EventHandler(this.textEmail_TextChanged);
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(93, 104);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(42, 16);
+            this.lblEmail.TabIndex = 18;
+            this.lblEmail.Text = "Email";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(337, 181);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(133, 22);
+            this.textBox2.TabIndex = 17;
+            // 
+            // lblCPass
+            // 
+            this.lblCPass.AutoSize = true;
+            this.lblCPass.Location = new System.Drawing.Point(344, 165);
+            this.lblCPass.Name = "lblCPass";
+            this.lblCPass.Size = new System.Drawing.Size(116, 16);
+            this.lblCPass.TabIndex = 16;
+            this.lblCPass.Text = "Confirm Password";
+            // 
+            // textPassword
+            // 
+            this.textPassword.Location = new System.Drawing.Point(85, 181);
+            this.textPassword.Name = "textPassword";
+            this.textPassword.Size = new System.Drawing.Size(133, 22);
+            this.textPassword.TabIndex = 15;
+            // 
+            // lblPass
+            // 
+            this.lblPass.AutoSize = true;
+            this.lblPass.Location = new System.Drawing.Point(93, 165);
+            this.lblPass.Name = "lblPass";
+            this.lblPass.Size = new System.Drawing.Size(68, 16);
+            this.lblPass.TabIndex = 14;
+            this.lblPass.Text = "Password";
+            // 
+            // textMbiemri
+            // 
+            this.textMbiemri.Location = new System.Drawing.Point(317, 63);
+            this.textMbiemri.Name = "textMbiemri";
+            this.textMbiemri.Size = new System.Drawing.Size(153, 22);
+            this.textMbiemri.TabIndex = 13;
+            // 
+            // lblMbiemri
+            // 
+            this.lblMbiemri.AutoSize = true;
+            this.lblMbiemri.Location = new System.Drawing.Point(370, 44);
+            this.lblMbiemri.Name = "lblMbiemri";
+            this.lblMbiemri.Size = new System.Drawing.Size(56, 16);
+            this.lblMbiemri.TabIndex = 12;
+            this.lblMbiemri.Text = "Mbiemri";
+            // 
+            // txtEmri
+            // 
+            this.txtEmri.Location = new System.Drawing.Point(150, 65);
+            this.txtEmri.Multiline = true;
+            this.txtEmri.Name = "txtEmri";
+            this.txtEmri.Size = new System.Drawing.Size(160, 20);
+            this.txtEmri.TabIndex = 11;
+            // 
+            // lblEmri
+            // 
+            this.lblEmri.AutoSize = true;
+            this.lblEmri.Location = new System.Drawing.Point(214, 42);
+            this.lblEmri.Name = "lblEmri";
+            this.lblEmri.Size = new System.Drawing.Size(35, 16);
+            this.lblEmri.TabIndex = 10;
+            this.lblEmri.Text = "Emri";
+            this.lblEmri.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 561);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "Register";
+            this.Text = "Register";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -331,8 +332,8 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button register;
-        private System.Windows.Forms.Button logInBtn;
+        private System.Windows.Forms.Button bttnRegister;
+        private System.Windows.Forms.Button bttnLogin;
         private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox textBox2;
