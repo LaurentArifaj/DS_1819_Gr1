@@ -11,7 +11,7 @@ namespace TCP_Serveri
     class Program
     {
 
-        public static String ipAddress = "127.0.0.1";
+        public static String ipAddress = "192.168.43.159";
         public static int port = 11000;
 
         public static object MessageBox { get; private set; }
@@ -72,22 +72,32 @@ namespace TCP_Serveri
                     // Incoming data from the client.    
                     string data = null;
                     byte[] bytes = null;
-
+                    int bytesRec = 0;
                     while (true)
                     {
                         bytes = new byte[1024];
-                        int bytesRec = handler.Receive(bytes);
-                        data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
-                        if (data.IndexOf("<EOF>") > -1)
+                        try
                         {
-                            break;
+                            bytesRec = handler.Receive(bytes);
                         }
+                        catch(Exception e)
+                        {
+                            Console.WriteLine(e.ToString());
+                            handler.Close();
+                        }
+
+                        data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
+                        Console.WriteLine("Text received : {0}", data);
+                        
+                        break;
                     }
 
-                    Console.WriteLine("Text received : {0}", data);
+                    String message = "Bravo jetmir";
+                    handler.Send(Encoding.ASCII.GetBytes(message));
 
-                    byte[] msg = Encoding.ASCII.GetBytes(data);
-                    handler.Send(msg);
+
+                    //byte[] msg = Encoding.ASCII.GetBytes(data);
+                    //handler.Send(msg);
                 }
                 handler.Shutdown(SocketShutdown.Both);
                 handler.Close();
