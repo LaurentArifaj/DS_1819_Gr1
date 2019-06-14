@@ -19,15 +19,15 @@ namespace TCP_Serveri
         static void Main(string[] args)
         {
 
-            Console.WriteLine("A deshironi te kyceni ne serverin default?(Y , N): ");
+            Console.WriteLine("Do you want to connect ?(Y , N): ");
             String inputChoise = Console.ReadLine();
             if (inputChoise == "Y" || inputChoise == "y") {
                 StartServer(ipAddress, port);
             }
             else {
-                Console.WriteLine("Shkruani Ip Adresen:");
+                Console.WriteLine("Write IpAddress:");
                 String ipAddress = Console.ReadLine();
-                Console.WriteLine("Shkruani Portin:");
+                Console.WriteLine("Write Port:");
  Porti:
                 try
                 {
@@ -64,33 +64,38 @@ namespace TCP_Serveri
                 listener.Listen(10);
 
                 Console.WriteLine("Waiting for a connection...");
-                Socket handler = listener.Accept();
-
-                // Incoming data from the client.    
-                string data = null;
-                byte[] bytes = null;
-
+                Socket handler = null;
                 while (true)
                 {
-                    bytes = new byte[1024];
-                    int bytesRec = handler.Receive(bytes);
-                    data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
-                    if (data.IndexOf("<EOF>") > -1)
+                    handler = listener.Accept();
+
+                    // Incoming data from the client.    
+                    string data = null;
+                    byte[] bytes = null;
+
+                    while (true)
                     {
-                        break;
+                        bytes = new byte[1024];
+                        int bytesRec = handler.Receive(bytes);
+                        data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
+                        if (data.IndexOf("<EOF>") > -1)
+                        {
+                            break;
+                        }
                     }
+
+                    Console.WriteLine("Text received : {0}", data);
+
+                    byte[] msg = Encoding.ASCII.GetBytes(data);
+                    handler.Send(msg);
                 }
-
-                Console.WriteLine("Text received : {0}", data);
-
-                byte[] msg = Encoding.ASCII.GetBytes(data);
-                handler.Send(msg);
                 handler.Shutdown(SocketShutdown.Both);
                 handler.Close();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
+
             }
 
         }
