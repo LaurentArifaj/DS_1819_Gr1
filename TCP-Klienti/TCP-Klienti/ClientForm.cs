@@ -79,7 +79,7 @@ namespace TCP_Klienti
             if (defaultValueCheck.Checked == true)
             {
                 txtIpAddress.Text = "192.168.43.159";
-                txtPort.Text = "11000";
+                txtPort.Text = "127.0.0.1";
                 txtIpAddress.Enabled = false;
                 txtPort.Enabled = false;
             } else
