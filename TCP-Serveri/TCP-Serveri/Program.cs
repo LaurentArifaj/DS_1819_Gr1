@@ -11,7 +11,7 @@ namespace TCP_Serveri
     class Program
     {
 
-        public static String ipAddress = "127.0.0.1";
+        public static String ipAddress = "192.168.43.159";
         public static int port = 11000;
 
         public static object MessageBox { get; private set; }
@@ -19,15 +19,15 @@ namespace TCP_Serveri
         static void Main(string[] args)
         {
 
-            Console.WriteLine("A deshironi te kyceni ne serverin default?(Y , N): ");
+            Console.WriteLine("Do you want to connect ?(Y , N): ");
             String inputChoise = Console.ReadLine();
             if (inputChoise == "Y" || inputChoise == "y") {
                 StartServer(ipAddress, port);
             }
             else {
-                Console.WriteLine("Shkruani Ip Adresen:");
+                Console.WriteLine("Write IpAddress:");
                 String ipAddress = Console.ReadLine();
-                Console.WriteLine("Shkruani Portin:");
+                Console.WriteLine("Write Port:");
  Porti:
                 try
                 {
@@ -64,33 +64,48 @@ namespace TCP_Serveri
                 listener.Listen(10);
 
                 Console.WriteLine("Waiting for a connection...");
-                Socket handler = listener.Accept();
-
-                // Incoming data from the client.    
-                string data = null;
-                byte[] bytes = null;
-
+                Socket handler = null;
                 while (true)
                 {
-                    bytes = new byte[1024];
-                    int bytesRec = handler.Receive(bytes);
-                    data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
-                    if (data.IndexOf("<EOF>") > -1)
+                    handler = listener.Accept();
+
+                    // Incoming data from the client.    
+                    string data = null;
+                    byte[] bytes = null;
+                    int bytesRec = 0;
+                    while (true)
                     {
+                        bytes = new byte[1024];
+                        try
+                        {
+                            bytesRec = handler.Receive(bytes);
+                        }
+                        catch(Exception e)
+                        {
+                            Console.WriteLine(e.ToString());
+                            handler.Close();
+                        }
+
+                        data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
+                        Console.WriteLine("Text received : {0}", data);
+                        
                         break;
                     }
+
+                    String message = "Bravo jetmir";
+                    handler.Send(Encoding.ASCII.GetBytes(message));
+
+
+                    //byte[] msg = Encoding.ASCII.GetBytes(data);
+                    //handler.Send(msg);
                 }
-
-                Console.WriteLine("Text received : {0}", data);
-
-                byte[] msg = Encoding.ASCII.GetBytes(data);
-                handler.Send(msg);
                 handler.Shutdown(SocketShutdown.Both);
                 handler.Close();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
+
             }
 
         }
