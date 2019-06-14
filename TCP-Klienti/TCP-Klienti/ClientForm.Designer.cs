@@ -72,7 +72,7 @@
             // defaultValueCheck
             // 
             this.defaultValueCheck.AutoSize = true;
-            this.defaultValueCheck.Location = new System.Drawing.Point(15, 195);
+            this.defaultValueCheck.Location = new System.Drawing.Point(40, 167);
             this.defaultValueCheck.Name = "defaultValueCheck";
             this.defaultValueCheck.Size = new System.Drawing.Size(90, 17);
             this.defaultValueCheck.TabIndex = 4;
@@ -82,11 +82,11 @@
             // 
             // btnClick
             // 
-            this.btnClick.Location = new System.Drawing.Point(118, 231);
+            this.btnClick.Location = new System.Drawing.Point(40, 190);
             this.btnClick.Name = "btnClick";
             this.btnClick.Size = new System.Drawing.Size(75, 23);
             this.btnClick.TabIndex = 5;
-            this.btnClick.Text = "Click";
+            this.btnClick.Text = "Connect";
             this.btnClick.UseVisualStyleBackColor = true;
             this.btnClick.Click += new System.EventHandler(this.btnClick_Click);
             // 
@@ -94,7 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 279);
+            this.ClientSize = new System.Drawing.Size(188, 223);
             this.Controls.Add(this.btnClick);
             this.Controls.Add(this.defaultValueCheck);
             this.Controls.Add(this.txtPort);

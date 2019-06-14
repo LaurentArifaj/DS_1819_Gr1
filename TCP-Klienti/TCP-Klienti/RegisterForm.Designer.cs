@@ -226,6 +226,7 @@
             this.bttnLogin.TabIndex = 28;
             this.bttnLogin.Text = "Log In";
             this.bttnLogin.UseVisualStyleBackColor = false;
+            this.bttnLogin.Click += new System.EventHandler(this.bttnLogin_Click);
             // 
             // textEmail
             // 

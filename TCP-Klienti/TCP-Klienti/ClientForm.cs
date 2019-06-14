@@ -39,7 +39,7 @@ namespace TCP_Klienti
 
         }
 
-        public static void startClient(String ipAddress, int port)
+        public void startClient(String ipAddress, int port)
         {
 
             byte[] bytes = new byte[1024];
@@ -53,15 +53,11 @@ namespace TCP_Klienti
                 Socket sender =
                     new Socket(ipAddr.AddressFamily,
                     SocketType.Stream, ProtocolType.Tcp);
-
                 try
                 {
                     sender.Connect(remoteEp);
-                    byte[] msg = Encoding.ASCII.GetBytes("TEst");
-                    int byteSent = sender.Send(msg);
-                    byte[] msg4 = Encoding.ASCII.GetBytes("TEstLAVDA<EOF>");
-                    int byteSent4 = sender.Send(msg4);
-                    MessageBox.Show("Sukses: " + byteSent);
+                    new Login(sender).Show();
+                    this.Hide();
                 }
                 catch (Exception e)
                 {
@@ -79,7 +75,7 @@ namespace TCP_Klienti
             if (defaultValueCheck.Checked == true)
             {
                 txtIpAddress.Text = "192.168.43.159";
-                txtPort.Text = "127.0.0.1";
+                txtPort.Text = "11000";
                 txtIpAddress.Enabled = false;
                 txtPort.Enabled = false;
             } else
